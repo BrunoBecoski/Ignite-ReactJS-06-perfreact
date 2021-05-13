@@ -2,15 +2,17 @@ import { FormEvent, useCallback, useState } from 'react';
 
 import { SearchResults } from '../components/SearchResults';
 
+import styles from '../styles/Home.module.css';
+
 type Results = {
-  totalPrice: number;
+  totalPriceFormatted: string;
   data: any[];
 }
 
 export default function Home() {
   const [search, setSearch] = useState('');
   const [results, setResults] = useState<Results>({
-    totalPrice: 0,
+    totalPriceFormatted: '',
     data: []
   });
   
@@ -38,11 +40,11 @@ export default function Home() {
       }
     })
 
-    const totalPrice = data.reduce((total, product) => {
+    const totalPriceFormatted = formatter.format(data.reduce((total, product) => {
       return total + product.price;
-    }, 0);
+    }, 0));
 
-    setResults({ totalPrice, data: products});
+    setResults({ totalPriceFormatted, data: products});
   }
 
   const addToWishlist = useCallback(async (id: number) => {
@@ -50,7 +52,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <main className={styles.container}>
       <h1>Search</h1>
 
       <form onSubmit={handleSearch}>
@@ -58,15 +60,16 @@ export default function Home() {
           type="text"
           value={search}
           onChange={e => setSearch(e.target.value)}
+          placeholder="Busque por um produto"
         />
-          <button type="submit">Buscar</button>
+        <button type="submit">Buscar</button>
       </form>
 
       <SearchResults 
         results={results.data}
-        totalPrice={results.totalPrice} 
+        totalPriceFormatted={results.totalPriceFormatted} 
         onAddToWishlist={addToWishlist}
       />
-    </div>
+    </main>
   )
 }

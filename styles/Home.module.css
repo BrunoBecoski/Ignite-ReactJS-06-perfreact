@@ -1,0 +1,46 @@
+.container {
+  width: 75vw;
+  height: 100vh;
+  margin: auto;
+}
+
+.container h1 {
+  color: royalblue;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.container form input {
+  padding: .5rem;
+
+  border-right: none;
+  border: 2px solid blue;
+  border-radius: 5px 0 0 5px;
+  font-weight: 500;
+  font-size: .8rem;
+
+}
+
+.container form input::placeholder {
+  color: rgba(0, 0, 255, .5)
+}
+
+.container form button {
+  font-size: .8rem;
+
+  cursor: pointer;
+  padding: .5rem;
+  background-color: white;
+
+  border-left: none;
+  border: 2px solid blue;
+  border-radius: 0 5px 5px 0;
+
+  transition: color .2s;
+}
+
+.container form button:hover {
+  border-color: black;
+  color: black;
+  font-weight: 500;
+}

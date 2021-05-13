@@ -2,10 +2,12 @@ import { memo, useState } from 'react';
 import dynamic from 'next/dynamic';
 import lodash from 'lodash';
 
-import { AddProductToWishlistProps } from './AddProductToWishlist';
+import { AddProductToWishlistProps } from '../AddProductToWishlist/index';
+
+import styles from './styles.module.css';
 
 const AddProductToWishlist = dynamic<AddProductToWishlistProps>(() => {
-  return import('./AddProductToWishlist').then(mod => mod.AddProductToWishlist);
+  return import('../AddProductToWishlist/index').then(mod => mod.AddProductToWishlist);
 },{
   loading: () => <span>Carregando...</span>
 })
@@ -24,8 +26,8 @@ function ProductItemComponent({ product, onAddToWishlist}: ProductItemProps) {
   const [isAddingToWishlist ,setIsAddingToWishlist] = useState(false);
 
   return (
-    <div>
-      {product.title} - <strong>{product.priceFormatted}</strong>
+    <div className={styles.div}>
+      <p>{product.title} - <strong>{product.priceFormatted}</strong></p>
       <button onClick={() => setIsAddingToWishlist(true)}>Adicionar aos favoritos</button>
 
       { isAddingToWishlist && (
