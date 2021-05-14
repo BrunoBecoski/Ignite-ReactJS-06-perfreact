@@ -1,24 +1,32 @@
+.span  {
+  margin-top: -.25rem;
+}
+
+.yes {
+  background-color:green;
+}
+
+.no {
+  background-color:red;
+}
+
 .yes, .no {
   cursor: pointer;
-  padding: .2rem;
-  background-color: white;
+
+  padding: .4rem;
   margin: 0 .5rem;
+  border: none;
+  border-radius: .2rem;
+  
   font-weight: 600;
+  color: white;  
+  
+  transition: filter .2s;
 }
 
 .yes:hover, 
 .no:hover {
-  color: black;
-  border-color: black;
+  filter: brightness(.8);
 }
 
-.yes {
-  border: 2px solid green;
-  color:green;
-}
-
-.no {
-  border: 2px solid red;
-  color:red;
-}
 

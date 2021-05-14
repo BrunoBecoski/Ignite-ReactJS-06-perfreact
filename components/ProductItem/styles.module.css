@@ -1,22 +1,30 @@
 .div {
-  border-bottom: 3px solid rgba(0, 0 , 255, 0.2);
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin-top: .5rem;
+  padding-bottom: .25rem;
+
+  border-bottom: 3px double darkblue;
 }
 
 .div > button {
   cursor: pointer;
+  
+  padding: .2rem;
   font-weight: 500;
-
-  background-color:white;
-  border: 2px solid blue;
   font-size: .8rem;
-  padding: .2rem; 
-  margin: 0 .5rem;
+  margin-top: -.25rem;
+  border-radius: .2rem;
+  
+  color: royalblue;
+  background-color:white;
+  border: 2px solid royalblue;
+  
+  transition: color .5s, border .5s;
 }
 
 .div > button:hover {
-  color: black;
-  border-color: black;
+  color: darkblue;
+  border-color: darkblue;
 }

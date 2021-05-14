@@ -43,7 +43,7 @@ export function SearchResults({ totalPriceFormatted, results, onAddToWishlist }:
           <List 
             height={height}
             width={width}
-            rowHeight={50}
+            rowHeight={43}
             overscanRowCount={5}
             rowCount={results.length}
             rowRenderer={rowRenderer}

@@ -15,6 +15,8 @@ class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
           
           <title>Search | PerfReact</title>
+
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
         <body>
           <Main />
